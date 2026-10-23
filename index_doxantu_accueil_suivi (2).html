@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#d85f45">
+<title>Doxantu — Chaussures</title>
+<style>
+:root{--bg:#fff8f3;--ink:#29201d;--muted:#786a64;--gold:#d85f45;--line:#f0d9d0;--white:#fff;--danger:#a63232;--green:#216b4d;--brand:#d85f45;--brand-dark:#a93e2d;--cream:#fff0e8}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--ink)}button,input,select,textarea{font:inherit}button{cursor:pointer}.top{background:var(--brand);color:white;padding:12px 5vw;display:flex;align-items:center;justify-content:space-between;gap:14px}.brand{font-weight:900;letter-spacing:2.5px;font-size:22px;display:flex;align-items:center;gap:9px}.brand span{color:#fff0e8}.brand-mark{font-size:25px;line-height:1;filter:grayscale(1) brightness(0) invert(1)}.top small{color:#d7d1c4}.nav{display:flex;gap:8px;flex-wrap:wrap}.btn{border:1px solid var(--line);background:white;color:#171717;padding:10px 14px;border-radius:8px;font-weight:700}.btn.dark{background:#29201d;color:white;border-color:#29201d}.btn.gold{background:var(--brand);border-color:var(--brand);color:#fff}.btn.gold:hover{background:var(--brand-dark);border-color:var(--brand-dark)}.btn.danger{color:var(--danger)}.btn:disabled{opacity:.5;cursor:not-allowed}.wrap{max-width:1180px;margin:auto;padding:24px 20px}.hero{background:linear-gradient(125deg,#d85f45 0%,#c94f38 62%,#a93e2d 100%);color:white;box-shadow:0 18px 40px #a93e2d22;border-radius:18px;padding:clamp(24px,5vw,60px);display:grid;grid-template-columns:1.2fr .8fr;gap:20px;align-items:center;overflow:hidden}.eyebrow{color:#f8d8ca;font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}.hero h1{font-size:clamp(34px,5vw,62px);line-height:1.02;margin:12px 0}.hero p{color:#d3d0ca;max-width:540px;line-height:1.7}.hero-art{min-height:240px;display:grid;place-items:center;font-size:clamp(90px,17vw,180px);background:radial-gradient(ellipse,#f18b70aa,transparent 68%);border-radius:50%}.section-head{display:flex;align-items:end;justify-content:space-between;gap:15px;margin:30px 0 16px}.section-head h2{margin:0;font-size:25px}.muted{color:var(--muted)}.category-tabs{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.category-tab{border:1px solid #ead2c8;border-radius:999px;background:#fff;color:#49352e;padding:12px 20px;font-weight:800;transition:all .2s}.category-tab:hover{border-color:#d85f45;color:#a94330}.category-tab.active{background:#d85f45;color:#fff;border-color:#d85f45;box-shadow:0 5px 14px #d85f4530}
+.filters{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:20px 0 24px;padding:12px;background:linear-gradient(135deg,#fff 0%,#fff0e8 100%);border:1px solid #f0d1c5;border-radius:18px;box-shadow:0 8px 24px #8e392012}.search-box{position:relative;display:flex;align-items:center;flex:1 1 280px;min-width:0}.search-box .search-icon{position:absolute;left:17px;width:19px;height:19px;color:#a94330;pointer-events:none}.filters .search-box input{width:100%;max-width:none;min-width:0;flex:1;border:1px solid transparent;border-radius:13px;background:#fff;padding:15px 46px 15px 48px;box-shadow:inset 0 0 0 1px #f0d9d0;outline:none;transition:box-shadow .2s,border-color .2s,transform .2s}.filters .search-box input:focus{border-color:#d85f45;box-shadow:0 0 0 4px #d85f4526,0 8px 18px #a9433012;transform:translateY(-1px)}.filters .search-box input::placeholder{color:#9b8981}.filters select{border:1px solid #ead2c8;border-radius:12px;background:#fffaf7;color:#3a2924;padding:13px 36px 13px 14px;min-height:48px;font-weight:650;outline:none;transition:border-color .2s,box-shadow .2s}.filters select:focus{border-color:#d85f45;box-shadow:0 0 0 3px #d85f4520}.field{display:flex;flex-direction:column;gap:6px;min-width:0}.field label{font-size:12px;font-weight:800;color:#555}.field input,.field select,.field textarea{border:1px solid #d9d4ca;border-radius:8px;background:white;padding:11px 12px;width:100%;min-width:0}.filters input{max-width:360px;flex:1}.filters select{width:auto;min-width:150px}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.product{background:white;border:1px solid var(--line);border-radius:13px;overflow:hidden;display:flex;flex-direction:column}.photo{aspect-ratio:1/1;background:#e9e5dc;display:grid;place-items:center;overflow:hidden}.photo img{width:100%;height:100%;object-fit:cover}.placeholder{font-size:65px}.pbody{padding:14px;display:flex;flex-direction:column;gap:8px;flex:1}.pbody h3{font-size:16px;margin:0}.price{font-weight:900;font-size:18px}.pill{display:inline-block;background:#ffebe3;color:#a94330;border-radius:99px;padding:4px 8px;font-size:11px;font-weight:800}.pbody .btn{margin-top:auto}.panel{background:white;border:1px solid var(--line);border-radius:14px;padding:20px;margin:18px 0}.hidden{display:none!important}.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}.three{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat{padding:16px;background:#fff0e8;border-radius:10px}.stat b{font-size:25px;display:block}.admin-layout{display:grid;grid-template-columns:220px 1fr;gap:20px}.side{background:#a94330;color:white;border-radius:12px;padding:14px;align-self:start}.side button{display:block;width:100%;text-align:left;background:transparent;color:white;border:0;padding:12px;border-radius:7px}.side button.active,.side button:hover{background:#d85f45}.tablewrap{overflow:auto}table{border-collapse:collapse;width:100%;min-width:600px}th,td{text-align:left;border-bottom:1px solid var(--line);padding:12px 10px;font-size:13px;vertical-align:top}th{color:#6d675d;background:#faf8f3}.notice{padding:12px 14px;background:#f3ead6;border:1px solid #e8d8b6;border-radius:9px;margin:12px 0;color:#624a1b}.success{background:#e4f2e9;border-color:#c1e1ce;color:#1c593b}.error{background:#f8e6e3;border-color:#e8c4bf;color:#8b2b22}.modal{position:fixed;inset:0;background:#0009;display:grid;place-items:center;padding:16px;z-index:10}.size-options{display:flex;flex-wrap:wrap;gap:9px;margin:14px 0}.size-option{border:1px solid var(--line);background:#fff8f3;border-radius:9px;padding:11px 14px;min-width:60px;font-weight:800}.size-option.selected{background:var(--brand);color:#fff;border-color:var(--brand)}.size-option:disabled{opacity:.35;cursor:not-allowed;text-decoration:line-through}.size-quantity-list{display:grid;grid-template-columns:1fr;gap:8px}.size-quantity-row{display:grid;grid-template-columns:1fr minmax(88px,110px);gap:12px;align-items:center;border:1px solid var(--line);background:#fffaf7;padding:10px 12px;border-radius:10px}.size-quantity-row .size-label{font-weight:850}.size-quantity-row small{display:block;color:var(--muted);font-weight:500;font-size:11px;margin-top:2px}.size-quantity-row input{width:100%;min-width:0;border:1px solid #d9d4ca;border-radius:8px;padding:10px}.size-quantity-row input:focus{outline:2px solid #d85f4540;border-color:var(--brand)}.modal-card{background:white;border-radius:15px;padding:22px;width:min(600px,100%);max-height:90vh;overflow:auto}.modal-head{display:flex;justify-content:space-between;align-items:center;gap:12px}.modal-head h2{margin:0}.close{border:0;background:#eee;border-radius:8px;padding:8px}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.image-preview-wrap{display:flex;align-items:center;gap:14px;flex-wrap:wrap}.image-preview{width:112px;height:112px;border-radius:12px;border:1px solid var(--line);background:#fff8f3;object-fit:cover;display:none}.image-preview.visible{display:block}.file-hint{font-size:12px;color:var(--muted);line-height:1.5}.full{grid-column:1/-1}.footer{background:#a94330;color:#fff0e8;padding:28px 5vw;margin-top:45px;font-size:13px}.cartrow{display:grid;grid-template-columns:1fr auto;gap:10px;padding:12px 0;border-bottom:1px solid var(--line)}.empty{text-align:center;padding:45px 15px;color:var(--muted)}.loading{opacity:.65;pointer-events:none}
+
+/* Fenetre de confirmation de suppression des commandes */
+.delete-confirm-modal{z-index:30;background:rgba(30,18,15,.62);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);animation:deleteOverlayIn .16s ease-out}
+.delete-confirm-card{width:min(440px,100%);padding:0;overflow:hidden;border:1px solid #f2d5cf;border-radius:22px;box-shadow:0 24px 80px #2a100f45;animation:deleteCardIn .2s ease-out}
+.delete-confirm-top{padding:26px 24px 18px;text-align:center;background:linear-gradient(180deg,#fff5f2 0%,#fff 100%)}
+.delete-confirm-icon{width:66px;height:66px;margin:0 auto 15px;display:grid;place-items:center;border-radius:22px;background:#ffe5e1;color:#ad3028;box-shadow:inset 0 0 0 1px #f7c8c2}
+.delete-confirm-icon svg{width:30px;height:30px}
+.delete-confirm-kicker{font-size:11px;letter-spacing:1.8px;font-weight:900;color:#b04437;text-transform:uppercase}
+.delete-confirm-title{margin:7px 0 9px;font-size:24px;letter-spacing:-.5px;color:#30201c}
+.delete-confirm-copy{margin:0 auto;max-width:330px;color:#77645f;font-size:14px;line-height:1.65}
+.delete-order-reference{margin:18px 24px 0;padding:13px 15px;border:1px solid #f0d9d2;border-radius:12px;background:#fffaf8;display:flex;align-items:center;gap:11px;text-align:left;min-width:0}
+.delete-order-reference .ref-icon{width:38px;height:38px;flex:none;border-radius:11px;display:grid;place-items:center;background:#f8e8e2;color:#a94330}
+.delete-order-reference .ref-icon svg{width:19px;height:19px}
+.delete-order-reference .ref-content{min-width:0;flex:1}
+.delete-order-reference .ref-label{display:block;font-size:11px;color:#927c74;margin-bottom:3px}
+.delete-order-reference .ref-number{display:block;font-size:14px;font-weight:850;color:#35231f;overflow-wrap:anywhere}
+.delete-confirm-warning{margin:14px 24px 0;color:#8c5147;font-size:12px;line-height:1.55;text-align:center}
+.delete-confirm-actions{display:flex;gap:10px;padding:22px 24px 24px}
+.delete-confirm-actions button{flex:1;min-width:0;min-height:46px;border-radius:12px;font-weight:800}
+.delete-cancel-btn{background:#fff;color:#4f403b;border:1px solid #e7d9d4}
+.delete-cancel-btn:hover{background:#fff6f2}
+.delete-final-btn{background:#b52f2a;color:#fff;border:1px solid #b52f2a;box-shadow:0 5px 13px #b52f2a25}
+.delete-final-btn:hover{background:#97251f;border-color:#97251f}
+.delete-final-btn:disabled,.delete-cancel-btn:disabled{opacity:.6;cursor:wait}
+@keyframes deleteOverlayIn{from{opacity:0}to{opacity:1}}
+@keyframes deleteCardIn{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-width:480px){.delete-confirm-modal{align-items:center;padding:14px}.delete-confirm-card{border-radius:19px}.delete-confirm-top{padding:23px 18px 16px}.delete-confirm-title{font-size:22px}.delete-order-reference{margin:16px 18px 0}.delete-confirm-warning{margin:13px 18px 0}.delete-confirm-actions{padding:19px 18px 20px;flex-direction:column-reverse}.delete-confirm-actions button{width:100%;min-height:48px}}
+@media(prefers-reduced-motion:reduce){.delete-confirm-modal,.delete-confirm-card{animation:none}}
+
+/* Navigation responsive, panier et accessibilité */
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.menu-toggle{display:none;border:1px solid #ffffff70;background:transparent;color:#fff;border-radius:10px;width:44px;height:42px;align-items:center;justify-content:center;flex-direction:column;gap:5px}
+.menu-toggle span{display:block;width:21px;height:2px;background:#fff;border-radius:2px}
+.cart-icon-btn{position:relative;display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:42px;padding:9px 12px}
+.cart-icon-btn svg{width:23px;height:23px}
+.cart-badge{position:absolute;top:-7px;right:-7px;min-width:20px;height:20px;padding:0 5px;display:flex;align-items:center;justify-content:center;border-radius:999px;background:#29201d;color:#fff;font-size:11px;font-weight:900;border:2px solid var(--brand);line-height:1}
+.admin-layout,.admin-tab,.panel,.tablewrap{min-width:0}
+.tablewrap{max-width:100%;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;border-radius:8px}
+.tablewrap table{min-width:650px}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #d85f4566;outline-offset:2px}
+@media(max-width:620px){
+  .top{position:relative;display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px;flex-direction:initial;padding:12px 16px}
+  .menu-toggle{display:flex;grid-column:2;grid-row:1}
+  .top>div:first-child{grid-column:1;grid-row:1}
+  .nav{display:none;grid-column:1/-1;width:100%;flex-direction:column;gap:8px;padding-top:8px}
+  .nav.open{display:flex}
+  .nav .btn{width:100%;flex:none;text-align:left;justify-content:flex-start}
+  .cart-icon-btn{justify-content:flex-start;gap:10px}
+  .cart-badge{position:static;border:0;margin-left:2px}
+  .admin-layout{gap:12px}
+  .side{display:grid;grid-template-columns:1fr;overflow:visible;padding:8px}
+  .side button{width:100%;white-space:normal;padding:11px 12px}
+  .tablewrap{margin-right:-2px}
+  .tablewrap table{min-width:620px}
+  th,td{padding:10px 8px;font-size:12px}
+  .status-select{max-width:145px}
+  .section-head .btn{max-width:100%;white-space:normal}
+  .modal{padding:8px;align-items:end}
+  .modal-card{padding:16px;max-height:92dvh;border-radius:16px 16px 10px 10px}
+  .field input,.field select,.field textarea{font-size:16px}
+}
+@media(max-width:380px){
+  .brand{font-size:19px;letter-spacing:2px}
+  .wrap{padding:14px 10px}
+  .panel{padding:12px}
+  .grid{gap:8px}
+  .pbody{padding:8px}
+}
+@media(max-width:900px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.hero{grid-template-columns:1fr .6fr}.admin-layout{grid-template-columns:1fr}.side{display:flex;overflow:auto}.side button{white-space:nowrap;width:auto}.three{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.filters{padding:9px;gap:9px;border-radius:15px}.search-box{flex-basis:100%}.filters .search-box input{padding:14px 40px 14px 45px}.filters select{flex:1;min-width:0;width:calc(50% - 5px);padding:12px 8px;font-size:13px}.wrap{padding:18px 13px}.hero{grid-template-columns:1fr}.hero-art{min-height:100px;font-size:90px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.pbody{padding:10px}.pbody h3{font-size:14px}.price{font-size:16px}.two,.three,.formgrid{grid-template-columns:1fr}.full{grid-column:auto}.section-head{align-items:flex-start;flex-direction:column}.panel{padding:14px}}
+/* Ajustements administration : empêcher les panneaux et tableaux de faire déborder la page */
+.admin-layout{grid-template-columns:minmax(0,220px) minmax(0,1fr);width:100%;}
+.admin-layout>div,.admin-tab,.admin-tab>*,.panel,.section-head,.formgrid,.two,.three{min-width:0;}
+.admin-tab{width:100%;}
+.admin-tab .section-head{flex-wrap:wrap;}
+.admin-tab .section-head h3{min-width:0;overflow-wrap:anywhere;}
+.tablewrap{width:100%;max-width:100%;overflow-x:auto;}
+.tablewrap table{width:max-content;min-width:100%;}
+.adminProducts td:last-child{white-space:normal;}
+#adminProducts td:last-child .btn{margin:2px;}
+#adminOrders td{overflow-wrap:anywhere;}
+@media(max-width:900px){.admin-layout{grid-template-columns:minmax(0,1fr);}.admin-layout .side{display:flex;flex-wrap:wrap;overflow:visible;gap:5px;}.admin-layout .side button{flex:1 1 auto;width:auto;white-space:normal;text-align:center;}}
+@media(max-width:620px){
+  .admin-layout{display:flex;flex-direction:column;gap:12px;}
+  .admin-layout .side{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;padding:7px;}
+  .admin-layout .side button{font-size:12px;line-height:1.25;text-align:center;padding:10px 5px;overflow-wrap:anywhere;}
+  #tab-overview .three{grid-template-columns:1fr;}
+  #tab-overview .stat{display:flex;align-items:center;justify-content:space-between;gap:12px;}
+  #tab-overview .stat b{font-size:21px;}
+  .admin-tab .section-head{flex-direction:row;align-items:center;}
+  .admin-tab .section-head h3{font-size:18px;}
+  .admin-tab .section-head .btn{width:auto;}
+  .tablewrap{margin:0;width:100%;}
+  .tablewrap table{min-width:680px;}
+  .admin-tab .panel{padding:12px;}
+  .status-select{max-width:130px;}
+}
+@media(max-width:360px){.admin-layout .side{grid-template-columns:1fr;}.admin-layout .side button{text-align:left;}}
+
+
+.size-presets{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}.size-presets .btn{padding:7px 12px;border-radius:999px;background:#fff4ee;border-color:#e9b9a8;color:#8e3828}.size-presets .btn:hover{background:#d85f45;color:#fff}
+.status-select{max-width:160px;padding:9px 32px 9px 12px;border-radius:999px;border:1px solid #ead6ce;font-weight:800;background:#fff8f3;color:#5f4037;box-shadow:0 2px 7px #4a21100d;cursor:pointer}
+.status-select.status-pending{background:#fff3d8;color:#875b00;border-color:#f0d18b}.status-select.status-confirmed{background:#e7f1ff;color:#22558b;border-color:#b7d4f4}.status-select.status-paid{background:#e4f7ec;color:#17633b;border-color:#a8dfbf}.status-select.status-shipped{background:#f0eaff;color:#6741a5;border-color:#d2c0f4}.status-select.status-delivered{background:#dff5e8;color:#17633b;border-color:#9bd6b2}.status-select.status-cancelled{background:#ffebeb;color:#a52b2b;border-color:#f2b7b7}
+.delete-order-btn{background:#fff0f0!important;color:#a52828!important;border:1px solid #efb6b6!important;padding:8px 10px!important;white-space:nowrap}.delete-order-btn:hover{background:#ffe2e2!important}
+
+/* Accueil, gestion des pointures et suivi client */
+.welcome-note{margin:18px 0 0;padding:17px 20px;border:1px solid #f0d9d0;background:#fff;border-radius:14px;color:#68534b;line-height:1.75}.welcome-note strong{color:#a94330}.variant-editor{display:grid;gap:9px;margin:12px 0}.variant-row{display:grid;grid-template-columns:minmax(90px,.8fr) minmax(100px,1fr) auto;gap:9px;align-items:end;padding:10px;background:#fffaf7;border:1px solid #f0d9d0;border-radius:11px}.variant-row .field label{font-size:11px}.variant-row .btn{padding:10px 12px}.variant-row .remove-variant{color:#a63232;border-color:#edc9c4}.track-panel{margin-top:32px}.track-result{margin-top:14px}.track-status{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.track-chip{padding:8px 11px;border-radius:999px;background:#fff0e8;color:#8c4635;font-size:12px;font-weight:800}.track-chip.current{background:#d85f45;color:#fff}.track-chip.done{background:#e4f2e9;color:#216b4d}.success-order-card{width:min(500px,100%);text-align:center;border-radius:20px;padding:28px}.success-check{width:68px;height:68px;border-radius:50%;background:#e4f2e9;color:#216b4d;display:grid;place-items:center;font-size:34px;margin:0 auto 15px}.success-order-card h2{margin:6px 0 10px}.success-order-ref{padding:13px;border:1px dashed #d85f45;background:#fff8f3;border-radius:12px;margin:16px 0;font-weight:900;font-size:18px;overflow-wrap:anywhere}.modal-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:18px}.modal-actions .btn{flex:1;min-width:140px}
+@media(max-width:620px){.variant-row{grid-template-columns:1fr 1fr}.variant-row .remove-variant{grid-column:1/-1}.welcome-note{padding:14px}.success-order-card{padding:22px}}
+@media(prefers-reduced-motion:reduce){.track-chip,.variant-row{transition:none}}
+
+/* Contact WhatsApp et tableau de commandes plus lisible */
+.whatsapp-contact{display:inline-flex;align-items:center;gap:8px;background:#168c55;border-color:#168c55;color:#fff;text-decoration:none;white-space:nowrap}
+.whatsapp-contact:hover{background:#117746;border-color:#117746;color:#fff}
+.whatsapp-contact svg{width:20px;height:20px;flex:none}
+#navAdminOrders{position:relative;padding-right:20px}
+#navAdminOrders .cart-badge{background:#29201d;border-color:var(--brand);top:-7px;right:-7px}
+.order-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:16px 0}
+.order-summary-card{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 15px;border:1px solid #f0d9d0;border-radius:12px;background:#fffaf7;color:#786a64;font-size:12px;font-weight:750}
+.order-summary-card b{font-size:22px;color:#29201d}
+.order-summary-card.pending{background:#fff5df;border-color:#f0dca9}.order-summary-card.pending b{color:#875b00}
+.order-summary-card.shipped{background:#f2edff;border-color:#ddd1fa}.order-summary-card.shipped b{color:#6741a5}
+.order-summary-card.delivered{background:#eaf7ef;border-color:#c8e8d3}.order-summary-card.delivered b{color:#216b4d}
+.order-toolbar{display:flex;align-items:end;gap:12px;margin:14px 0}
+.order-search{flex:1}.order-status-filter{width:min(230px,100%)}
+.order-toolbar .field span{font-size:12px;font-weight:800;color:#6d675d}
+.order-toolbar input,.order-toolbar select{border:1px solid #ead6ce;border-radius:10px;padding:12px;background:#fff;width:100%;min-width:0}
+.orders-table{min-width:1040px!important}
+.orders-table th{position:sticky;top:0;z-index:1;background:#f8f2ed;white-space:nowrap}
+.orders-table td{padding-top:14px;padding-bottom:14px}
+.order-ref{display:inline-block;font-weight:900;color:#a94330;font-size:13px;overflow-wrap:anywhere}
+.order-date{display:block;color:#887b74;font-size:11px;margin-top:5px}
+.order-customer{font-weight:850;color:#30231f}
+.order-detail{display:block;color:#786a64;font-size:11px;margin-top:4px;line-height:1.45}
+.order-items-list{display:grid;gap:6px;min-width:150px}
+.order-item-line{padding:7px 9px;border-radius:8px;background:#fff8f3;border:1px solid #f0e2dc;line-height:1.4}
+.order-item-line b{color:#4a3027}
+.order-row-actions{display:grid;gap:8px;justify-items:start}
+.order-contact-btn{display:inline-flex;align-items:center;gap:6px;padding:7px 9px;border-radius:9px;border:1px solid #bfe5cd;background:#effaf3;color:#137344;font-size:12px;font-weight:800;text-decoration:none;white-space:nowrap}
+.order-contact-btn svg{width:15px;height:15px}
+.order-contact-btn:hover{background:#dff5e7}
+.order-status-cell{min-width:150px}
+@media(max-width:620px){.whatsapp-contact{justify-content:center;padding:10px 12px}.whatsapp-contact span{display:inline}.order-summary{grid-template-columns:1fr 1fr;gap:8px}.order-summary-card{padding:11px}.order-summary-card b{font-size:20px}.order-toolbar{flex-direction:column;align-items:stretch}.order-status-filter{width:100%}}
+
+</style>
+</head>
+<body>
+<header class="top">
+  <div><div class="brand"><span class="brand-mark" aria-hidden="true">👣</span><span style="color:#fff">DOXANTU</span></div><small>MARCHE AVEC STYLE</small></div>
+  <button class="menu-toggle" id="menuToggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mainNav"><span></span><span></span><span></span></button>
+  <nav class="nav" id="mainNav" aria-label="Navigation principale">
+    <button class="btn" id="navShop" type="button">Boutique</button>
+    <button class="btn" id="navTrack" type="button">Suivre ma commande</button>
+    <a class="btn whatsapp-contact" id="navWhatsApp" href="https://wa.me/221777562403?text=Bonjour%20Aminata%20%F0%9F%91%8B%2C%20je%20vous%20contacte%20depuis%20la%20plateforme%20DOXANTU." target="_blank" rel="noopener noreferrer" aria-label="Contacter Aminata sur WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16.04 3C8.9 3 3.1 8.77 3.1 15.88c0 2.27.6 4.49 1.74 6.45L3 29l6.85-1.79a13 13 0 0 0 6.18 1.56h.01c7.13 0 12.94-5.78 12.94-12.89A12.83 12.83 0 0 0 16.04 3Zm0 23.57h-.01a10.8 10.8 0 0 1-5.5-1.5l-.4-.24-4.06 1.06 1.08-3.94-.26-.41a10.66 10.66 0 0 1-1.65-5.66c0-5.97 4.87-10.82 10.86-10.82 2.9 0 5.62 1.13 7.67 3.17a10.74 10.74 0 0 1 3.18 7.65c0 5.97-4.87 10.82-10.9 10.82Zm5.96-8.1c-.33-.16-1.94-.96-2.24-1.07-.3-.11-.52-.16-.74.16-.22.33-.85 1.07-1.04 1.29-.19.22-.38.25-.71.08-.33-.16-1.39-.51-2.65-1.63-.98-.87-1.64-1.94-1.83-2.27-.19-.33-.02-.5.14-.66.15-.15.33-.38.49-.57.16-.19.22-.33.33-.55.11-.22.05-.41-.03-.57-.08-.16-.74-1.77-1.01-2.42-.27-.64-.54-.55-.74-.56h-.63c-.22 0-.57.08-.87.41-.3.33-1.14 1.11-1.14 2.71s1.17 3.14 1.33 3.36c.16.22 2.3 3.5 5.57 4.9.78.34 1.39.54 1.86.69.78.25 1.49.22 2.05.13.63-.09 1.94-.79 2.21-1.55.27-.77.27-1.43.19-1.56-.08-.14-.3-.22-.63-.38Z"/></svg><span>WhatsApp</span></a>
+    <button class="btn cart-icon-btn hidden" id="navAdminOrders" type="button" aria-label="Voir les commandes en attente">Commandes <span id="navNewOrderCount" class="cart-badge">0</span></button>
+    <button class="btn cart-icon-btn" id="navCart" type="button" aria-label="Ouvrir le panier">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h2l2.2 11.2a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 2-1.6L22 7H6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="20" r="1.4" fill="currentColor"/><circle cx="18" cy="20" r="1.4" fill="currentColor"/></svg>
+      <span id="cartCount" class="cart-badge">0</span><span class="sr-only">Panier</span>
+    </button>
+    <button class="btn hidden" id="navAdmin" type="button">Administration</button>
+  </nav>
+</header>
+<main class="wrap">
+<section id="shopView">
+  <div class="hero">
+    <div><div class="eyebrow">Collection hommes & femmes</div><h1>Marchez avec<br>caractère.</h1><p>Découvrez des chaussures sélectionnées pour votre style. Parcourez la collection et passez votre commande en quelques étapes.</p><button class="btn gold" onclick="document.getElementById('catalogue').scrollIntoView({behavior:'smooth'})">Découvrir la collection →</button></div>
+    <div class="hero-art" aria-hidden="true">👣</div>
+  </div>
+  <div class="welcome-note">💌 <strong>Un petit mot d’Aminata, fondatrice de Doxantu :</strong> « Bienvenue chez nous ! Installe-toi tranquillement, prends le temps de découvrir les modèles et choisis les paires qui te ressemblent. Ici, on veut que trouver chaussure à son pied reste simple, agréable et sans prise de tête. Merci de faire partie de l’aventure Doxantu ❤️ »</div>
+  <div class="section-head" id="catalogue"><div><div class="eyebrow">Notre sélection</div><h2>La collection Doxantu</h2></div><span class="muted" id="productCount"></span></div>
+  <div class="filters"><label class="search-box" aria-label="Rechercher une chaussure"><svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg><input id="search" type="search" placeholder="Rechercher une chaussure, une marque…" autocomplete="off"></label><div class="category-tabs" role="group" aria-label="Filtrer par public"><button type="button" class="category-tab active" data-category="">Tout</button><button type="button" class="category-tab" data-category="Homme">Hommes</button><button type="button" class="category-tab" data-category="Femme">Femmes</button></div><select id="category" class="hidden" aria-hidden="true" tabindex="-1"><option value="">Tout</option><option value="Homme">Hommes</option><option value="Femme">Femmes</option><option value="Unisexe">Unisexe</option></select><select id="sort"><option value="new">Nouveautés</option><option value="asc">Prix croissant</option><option value="desc">Prix décroissant</option></select></div>
+  <div id="catalog" class="grid"></div>
+  <div id="shopNotice" class="notice hidden"></div>
+  <section class="panel track-panel" id="trackPanel"><div class="section-head" style="margin-top:0"><div><div class="eyebrow" style="color:var(--brand)">On te tient au courant</div><h2>Suivre ma commande</h2></div></div><p class="muted">Tu as déjà commandé ? Saisis la référence reçue après ta commande et le numéro de téléphone utilisé pour voir son état.</p><form id="trackForm"><div class="two"><div class="field"><label for="trackOrderNumber">Référence de commande</label><input id="trackOrderNumber" required placeholder="Ex. DOX-2026-0001"></div><div class="field"><label for="trackPhone">Téléphone utilisé lors de la commande</label><input id="trackPhone" type="tel" required placeholder="77 000 00 00"></div></div><p><button class="btn gold" type="submit" id="trackSubmit">Consulter ma commande</button></p></form><div id="trackMsg"></div><div id="trackResult" class="track-result hidden"></div></section>
+</section>
+
+<section id="adminView" class="hidden">
+  <div class="section-head"><div><div class="eyebrow">Espace privé</div><h2>Administration Doxantu</h2></div><button id="logoutBtn" class="btn hidden">Déconnexion</button></div>
+  <div id="adminLogin" class="panel">
+    <h3>Connexion administrateur</h3><p class="muted">Connecte-toi avec le compte administrateur créé dans Supabase. L'inscription publique n'est pas disponible sur cette page.</p>
+    <div class="two"><div class="field"><label>Email</label><input id="loginEmail" type="email" autocomplete="username" placeholder="admin@doxantu.com"></div><div class="field"><label>Mot de passe</label><input id="loginPassword" type="password" autocomplete="current-password"></div></div>
+    <p><button id="loginBtn" class="btn dark">Se connecter</button></p><div id="loginMsg"></div>
+  </div>
+  <div id="adminApp" class="hidden">
+    <div class="admin-layout">
+      <aside class="side"><button class="active" data-tab="overview">Vue d'ensemble</button><button data-tab="products">Produits & stocks</button><button data-tab="orders">Commandes</button></aside>
+      <div>
+        <section id="tab-overview" class="admin-tab">
+          <div class="three"><div class="stat"><span class="muted">Produits actifs</span><b id="statProducts">—</b></div><div class="stat"><span class="muted">Commandes</span><b id="statOrders">—</b></div><div class="stat"><span class="muted">Ventes livrées (FCFA)</span><b id="statRevenue">—</b></div></div>
+          <div class="panel"><h3>À suivre</h3><p class="muted">Les nouvelles commandes sont vérifiées périodiquement tant que l’administration est ouverte. Pour recevoir les notifications du navigateur, autorise-les sur cet appareil.</p><button type="button" id="enableNotifications" class="btn">Activer les notifications</button><span id="notificationStatus" class="muted" style="display:block;margin-top:8px;font-size:12px"></span></div>
+        </section>
+        <section id="tab-products" class="admin-tab hidden">
+          <div class="section-head"><h3>Produits & stocks</h3><button id="addProductBtn" class="btn gold">+ Ajouter un produit</button></div>
+          <div id="productAdminMsg"></div><div class="tablewrap"><table><thead><tr><th>Produit</th><th>Catégorie</th><th>Prix</th><th>Stock total</th><th>Statut</th><th>Actions</th></tr></thead><tbody id="adminProducts"></tbody></table></div>
+        </section>
+        <section id="tab-orders" class="admin-tab hidden">
+          <div class="section-head"><div><h3>Commandes clients</h3><p class="muted" style="margin:5px 0 0">Retrouve les commandes, contacte les clients et mets leur statut à jour.</p></div><button id="refreshOrders" class="btn">↻ Actualiser</button></div>
+          <div class="order-summary" id="orderSummary"><div class="order-summary-card"><span>Total</span><b id="ordersTotalCount">0</b></div><div class="order-summary-card pending"><span>À traiter</span><b id="ordersPendingCount">0</b></div><div class="order-summary-card shipped"><span>Expédiées</span><b id="ordersShippedCount">0</b></div><div class="order-summary-card delivered"><span>Livrées</span><b id="ordersDeliveredCount">0</b></div></div>
+          <div class="order-toolbar"><label class="field order-search"><span>Rechercher une commande</span><input id="orderSearch" type="search" placeholder="Référence, client, téléphone, ville…"></label><label class="field order-status-filter"><span>Statut</span><select id="orderStatusFilter"><option value="">Tous les statuts</option><option value="pending">En attente</option><option value="confirmed">Confirmée</option><option value="paid">Payée</option><option value="shipped">Expédiée</option><option value="delivered">Livrée</option><option value="cancelled">Annulée</option></select></label></div>
+          <div id="orderAdminMsg"></div><div class="tablewrap"><table class="orders-table"><thead><tr><th>Commande</th><th>Client</th><th>Articles</th><th>Total</th><th>Paiement</th><th>Statut</th><th>Actions</th></tr></thead><tbody id="adminOrders"></tbody></table></div>
+        </section>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="cartView" class="hidden">
+  <div class="section-head"><div><div class="eyebrow">Votre sélection</div><h2>Mon panier</h2></div></div>
+  <div class="panel"><div id="cartItems"></div><div class="section-head"><strong>Total estimé</strong><strong id="cartTotal">0 FCFA</strong></div><button id="checkoutBtn" class="btn gold">Passer la commande</button><button id="clearCart" class="btn">Vider le panier</button><div id="cartMsg"></div></div>
+</section>
+</main>
+<footer class="footer"><div class="brand"><span class="brand-mark" aria-hidden="true">👣</span><span style="color:#fff">DOXANTU</span></div><p>Chaussures hommes & femmes · Livraison à Dakar et partout au Sénégal.</p><p>Les paiements Wave / Orange Money sont à confirmer directement avec Doxantu. Aucun paiement automatique n'est intégré à cette version.</p></footer>
+
+<div id="sizeModal" class="modal hidden"><div class="modal-card size-card"><div class="modal-head"><div><div class="eyebrow" style="color:var(--brand)">CHOISIR SA POINTURE</div><h2 id="sizeProductName">Votre chaussure</h2><div id="sizeProductPrice" class="price"></div></div><button class="close" data-close="sizeModal" aria-label="Fermer">✕</button></div><p class="muted">Choisis une ou plusieurs pointures, puis indique le nombre de paires pour chacune. Laisse 0 pour les pointures que tu ne souhaites pas.</p><div id="sizeOptions" class="size-options size-quantity-list"></div><div id="sizeModalMsg" class="notice hidden"></div><button id="confirmSizeBtn" class="btn gold" style="width:100%;margin-top:14px">Ajouter au panier</button></div></div>
+<div id="productModal" class="modal hidden"><div class="modal-card"><div class="modal-head"><h2 id="productModalTitle">Ajouter un produit</h2><button class="close" data-close="productModal">✕</button></div><form id="productForm"><input id="editProductId" type="hidden"><div class="formgrid">
+<div class="field full"><label>Nom du produit *</label><input id="pName" required maxlength="120"></div>
+<div class="field"><label>Catégorie *</label><select id="pCategory" required><option>Homme</option><option>Femme</option><option>Unisexe</option></select></div>
+<div class="field"><label>Prix (FCFA) *</label><input id="pPrice" type="number" min="1" step="1" required></div>
+<div class="field full"><label for="pImageFile">Photo du produit (depuis la galerie ou l’appareil photo)</label><div class="image-preview-wrap"><img id="pImagePreview" class="image-preview" alt="Aperçu de la photo du produit"><div style="flex:1;min-width:180px"><input id="pImageFile" type="file" accept="image/*"><small class="file-hint">Choisis une image dans ta galerie. Sur téléphone, tu peux aussi prendre une photo. Formats image acceptés, 5 Mo maximum. L’image sera enregistrée dans le stockage Supabase.</small><div><button type="button" class="btn" id="removeImageSelection" style="margin-top:8px">Retirer la nouvelle photo</button></div></div></div></div>
+<div class="field full"><label>Description</label><textarea id="pDescription" rows="3"></textarea></div>
+<div class="field full"><label>Pointures et stocks *</label><p class="muted" style="margin:0;font-size:12px">Ajoute chaque pointure séparément, modifie son stock ou supprime-la avec les boutons. C’est plus simple que de saisir une liste.</p><div class="size-presets"><button type="button" class="btn sizePreset" data-sizes="36,37,38,39,40,41">+ Préremplir 36–41</button><button type="button" class="btn sizePreset" data-sizes="39,40,41,42,43,44,45">+ Préremplir 39–45</button><button type="button" class="btn sizePreset" data-sizes="35,36,37,38,39,40">+ Préremplir 35–40</button></div><div id="variantEditor" class="variant-editor"></div><button type="button" class="btn" id="addVariantBtn">＋ Ajouter une pointure</button></div>
+<div class="field"><label>Visible en boutique</label><select id="pActive"><option value="true">Oui</option><option value="false">Non</option></select></div>
+</div><div id="productFormMsg"></div><p><button class="btn dark" type="submit">Enregistrer le produit</button></p></form></div></div>
+
+<div id="orderModal" class="modal hidden"><div class="modal-card"><div class="modal-head"><h2>Finaliser la commande</h2><button class="close" data-close="orderModal">✕</button></div><p class="muted">Renseigne tes coordonnées. Le paiement sera confirmé séparément par Doxantu.</p>
+<form id="orderForm"><div class="formgrid">
+<div class="field"><label>Nom complet *</label><input id="cName" required maxlength="120"></div><div class="field"><label>Téléphone / WhatsApp *</label><input id="cPhone" required type="tel" maxlength="30" placeholder="77 000 00 00"></div>
+<div class="field"><label>Région *</label><select id="cRegion" required><option value="">Choisir…</option><option>Dakar</option><option>Thiès</option><option>Diourbel</option><option>Fatick</option><option>Kaolack</option><option>Kaffrine</option><option>Louga</option><option>Saint-Louis</option><option>Matam</option><option>Tambacounda</option><option>Kédougou</option><option>Kolda</option><option>Sédhiou</option><option>Ziguinchor</option></select></div>
+<div class="field"><label>Ville / quartier *</label><input id="cCity" required maxlength="120"></div>
+<div class="field full"><label>Adresse de livraison <span class="muted">(facultatif si retrait en main propre)</span></label><textarea id="cAddress" rows="2" maxlength="500" placeholder="Facultatif si le client récupère sa commande"></textarea></div>
+<div class="field full"><label>Moyen de paiement souhaité *</label><select id="cPayment" required><option value="Wave">Wave</option><option value="Orange Money">Orange Money</option></select></div>
+<div class="field full"><label>Note pour la livraison (facultatif)</label><textarea id="cNote" rows="2" maxlength="500"></textarea></div>
+</div><div class="notice">Important : la commande n'est validée qu'après enregistrement réussi. Doxantu te contactera pour confirmer la disponibilité, les frais de livraison et le paiement.</div><div id="orderFormMsg"></div><p><button id="submitOrder" class="btn dark" type="submit">Commander</button></p></form></div></div>
+
+
+<div id="orderSuccessModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="orderSuccessTitle"><div class="modal-card success-order-card"><div class="success-check" aria-hidden="true">✓</div><div class="eyebrow" style="color:var(--green)">C’est bien reçu</div><h2 id="orderSuccessTitle">Commande passée avec succès !</h2><p class="muted">Merci pour ta confiance ❤️ Ta commande est enregistrée. Aminata / l’équipe Doxantu pourra te contacter pour confirmer la disponibilité, la livraison et le paiement.</p><div class="success-order-ref" id="successOrderNumber">Référence : —</div><p id="successOrderStatus" class="muted">Statut : En attente</p><div class="modal-actions"><button type="button" class="btn" id="successTrackBtn">Suivre ma commande</button><button type="button" class="btn gold" id="successCloseBtn">Continuer la boutique</button></div></div></div>
+
+<div id="deleteOrderModal" class="modal hidden delete-confirm-modal" role="dialog" aria-modal="true" aria-labelledby="deleteOrderTitle" aria-describedby="deleteOrderDescription">
+  <div class="modal-card delete-confirm-card">
+    <div class="delete-confirm-top">
+      <div class="delete-confirm-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="m19 6-1 14H6L5 6"/><path d="M10 11v5M14 11v5"/></svg></div>
+      <div class="delete-confirm-kicker">Action définitive</div>
+      <h2 id="deleteOrderTitle" class="delete-confirm-title">Supprimer cette commande ?</h2>
+      <p id="deleteOrderDescription" class="delete-confirm-copy">Cette commande sera supprimée de l’administration. Cette action ne peut pas être annulée.</p>
+    </div>
+    <div class="delete-order-reference"><div class="ref-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l5 5v13H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></div><div class="ref-content"><span class="ref-label">Référence de commande</span><strong id="deleteOrderNumber" class="ref-number">—</strong></div></div>
+    <p class="delete-confirm-warning">Les commandes déjà livrées sont protégées. Vérifie la référence avant de continuer.</p>
+    <div id="deleteOrderModalMsg" class="notice error hidden" style="margin:14px 24px 0"></div>
+    <div class="delete-confirm-actions"><button type="button" id="cancelDeleteOrder" class="delete-cancel-btn">Garder la commande</button><button type="button" id="confirmDeleteOrder" class="delete-final-btn"><svg style="width:16px;height:16px;vertical-align:-3px;margin-right:5px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2m3 0-1 14H6L5 6m5 5v5m4-5v5"/></svg>Supprimer définitivement</button></div>
+  </div>
+</div>
+
+<script type="module">
+import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+
+// 1) Renseigne les deux valeurs de ton projet Supabase dans ce fichier.
+const SUPABASE_URL = 'https://atzymkjqbksgdaeeqzdt.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF0enlta2pxYmtzZ2RhZWVxemR0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI3MTE3MzMsImV4cCI6MjEwODI4NzczM30.0Py7QEvP6uhkPMURwRkAzT-O0GNA2jHfngYXOhJUuZg';
+
+const configured = SUPABASE_URL.startsWith('https://') && !SUPABASE_URL.includes('COLLE_ICI') && SUPABASE_ANON_KEY.length > 20 && !SUPABASE_ANON_KEY.includes('COLLE_ICI');
+const db = configured ? createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
+const $ = id => document.getElementById(id);
+const money = n => new Intl.NumberFormat('fr-FR').format(Number(n)||0)+' FCFA';
+const escapeHtml = s => String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const CART_STORAGE_KEY = 'doxantu_cart_v1';
+function readSavedCart(){try{const value=JSON.parse(localStorage.getItem(CART_STORAGE_KEY)||'[]');return Array.isArray(value)?value.filter(x=>x&&x.variant_id&&x.product_id&&Number.isInteger(Number(x.quantity))&&Number(x.quantity)>0&&Number(x.price)>=0):[]}catch{return []}}
+const state = {products:[], variants:[], cart:readSavedCart(), user:null, isAdmin:false};
+const show = id => $(id).classList.remove('hidden');
+const hide = id => $(id).classList.add('hidden');
+function message(id,text,type='notice'){const el=$(id);el.className=type;el.textContent=text;show(id)}
+function configNotice(){if(!configured){message('shopNotice','Configuration nécessaire : crée ton projet Supabase puis ajoute son URL et sa clé publique anon dans index.html. Aucune donnée ni commande ne sera enregistrée avant cette étape.');$('catalog').innerHTML='<div class="panel" style="grid-column:1/-1"><h3>La boutique arrive bientôt</h3><p>Le site est prêt côté interface. Connecte Supabase pour charger les vrais produits et activer les commandes.</p></div>';}}
+function saveCart(){try{localStorage.setItem(CART_STORAGE_KEY,JSON.stringify(state.cart))}catch(err){console.warn('Le panier ne peut pas être sauvegardé localement.',err)}updateCartBadge()}
+function updateCartBadge(){const count=state.cart.reduce((sum,x)=>sum+(Number(x.quantity)||0),0);$('cartCount').textContent=String(count);$('navCart').setAttribute('aria-label',`Ouvrir le panier, ${count} article${count>1?'s':''}`)}
+function closeMenu(){$('mainNav').classList.remove('open');$('menuToggle').setAttribute('aria-expanded','false');$('menuToggle').setAttribute('aria-label','Ouvrir le menu')}
+$('menuToggle').onclick=()=>{const open=$('mainNav').classList.toggle('open');$('menuToggle').setAttribute('aria-expanded',String(open));$('menuToggle').setAttribute('aria-label',open?'Fermer le menu':'Ouvrir le menu')};
+function setView(view){['shopView','adminView','cartView'].forEach(hide);show(view);closeMenu();window.scrollTo({top:0,behavior:'smooth'});if(view==='cartView')renderCart();if(view==='adminView')refreshAdmin();}
+function showAdminTab(tab){if(!state.isAdmin)return;setView('adminView');document.querySelectorAll('[data-tab]').forEach(x=>x.classList.toggle('active',x.dataset.tab===tab));document.querySelectorAll('.admin-tab').forEach(panel=>panel.classList.add('hidden'));show('tab-'+tab);if(tab==='orders')loadOrders();if(tab==='products')loadAdminProducts();}
+$('navShop').onclick=()=>setView('shopView');$('navTrack').onclick=()=>{setView('shopView');setTimeout(()=>$('trackPanel').scrollIntoView({behavior:'smooth',block:'start'}),80);$('trackOrderNumber').focus({preventScroll:true})};$('navAdmin').onclick=()=>{if(window.location.hash!=='#admin')window.location.hash='admin';setView('adminView')};$('navAdminOrders').onclick=()=>showAdminTab('orders');$('navCart').onclick=()=>setView('cartView');
+function syncAdminNavigation(){const visible=!!state.isAdmin||window.location.hash==='#admin';$('navAdmin').classList.toggle('hidden',!visible);$('navAdminOrders').classList.toggle('hidden',!state.isAdmin);if(visible){$('navAdmin').removeAttribute('aria-hidden');$('navAdmin').removeAttribute('tabindex')}else{$('navAdmin').setAttribute('aria-hidden','true');$('navAdmin').setAttribute('tabindex','-1')}}
+window.addEventListener('hashchange',()=>{syncAdminNavigation();if(window.location.hash==='#admin')setView('adminView')});
+// L’administrateur ouvre https://votre-site.netlify.app/#admin ; l’authentification Supabase reste obligatoire.
+if (window.location.hash === '#admin') { setView('adminView'); }
+renderVariantEditor([]);
+$('search').addEventListener('input',renderCatalog);$('category').addEventListener('change',renderCatalog);document.querySelectorAll('.category-tab').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.category-tab').forEach(b=>b.classList.toggle('active',b===btn));$('category').value=btn.dataset.category;renderCatalog()}));$('sort').addEventListener('change',renderCatalog);
+document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>hide(b.dataset.close));
+document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-tab]').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.admin-tab').forEach(panel=>panel.classList.add('hidden'));show('tab-'+b.dataset.tab);if(b.dataset.tab==='products')loadAdminProducts();if(b.dataset.tab==='orders')loadOrders();});
+function productStock(p){return (p.product_variants||[]).reduce((s,v)=>s+v.stock,0)}
+function renderCatalog(){
+ let arr=state.products.filter(p=>p.active);
+ const q=$('search').value.toLowerCase().trim(),cat=$('category').value;
+ arr=arr.filter(p=>(!cat||p.category===cat)&&(`${p.name} ${p.description||''}`).toLowerCase().includes(q));
+ if($('sort').value==='asc')arr.sort((a,b)=>a.price-b.price);if($('sort').value==='desc')arr.sort((a,b)=>b.price-a.price);
+ $('productCount').textContent=arr.length+' modèle(s)';
+ $('catalog').innerHTML=arr.length?arr.map(p=>`<article class="product"><div class="photo">${p.image_url?`<img src="${escapeHtml(p.image_url)}" alt="${escapeHtml(p.name)}" loading="lazy" onerror="this.remove()">`:'<span class="placeholder">👟</span>'}</div><div class="pbody"><span class="pill">${escapeHtml(p.category)}</span><h3>${escapeHtml(p.name)}</h3><div class="price">${money(p.price)}</div><div class="muted" style="font-size:12px">${productStock(p)>0?'Disponible · '+productStock(p)+' paire(s)':'Rupture de stock'}</div><button class="btn dark" ${productStock(p)<=0?'disabled':''} onclick="window.pickProduct('${p.id}')">Ajouter au panier</button></div></article>`).join(''):'<div class="empty" style="grid-column:1/-1">Aucun produit trouvé pour le moment.</div>';
+}
+let selectedProductForSize=null;
+window.pickProduct = id => {
+ const p=state.products.find(x=>x.id===id);if(!p)return;
+ const options=(p.product_variants||[]);
+ if(!options.some(v=>v.stock>0))return message('shopNotice','Ce produit est momentanément indisponible.','notice error');
+ selectedProductForSize=p;
+ $('sizeProductName').textContent=p.name;$('sizeProductPrice').textContent=money(p.price);
+ $('sizeOptions').innerHTML=options.map(v=>`<label class="size-quantity-row"><span><span class="size-label">Pointure ${escapeHtml(v.size)}</span><small>${v.stock>0?v.stock+' paire(s) disponible(s)':'Épuisé'}</small></span><input type="number" class="size-request-quantity" data-variant="${v.id}" min="0" max="${v.stock}" step="1" value="0" aria-label="Quantité pointure ${escapeHtml(v.size)}" ${v.stock<=0?'disabled':''}></label>`).join('');
+ $('sizeModalMsg').classList.add('hidden');show('sizeModal');
+};
+$('confirmSizeBtn').onclick=()=>{
+ if(!selectedProductForSize){message('sizeModalMsg','Impossible de retrouver ce produit.','notice error');return}
+ const p=selectedProductForSize;const requested=[...$('sizeOptions').querySelectorAll('.size-request-quantity')];
+ const chosen=[];
+ for(const input of requested){const qty=Number(input.value);const v=(p.product_variants||[]).find(x=>x.id===input.dataset.variant);if(!v)continue;if(!Number.isInteger(qty)||qty<0||qty>v.stock){message('sizeModalMsg',`Quantité invalide pour la pointure ${v.size}. Stock disponible : ${v.stock}.`,'notice error');return}if(qty>0)chosen.push({v,qty})}
+ if(!chosen.length){message('sizeModalMsg','Indique au moins une paire pour une pointure.','notice error');return}
+ for(const {v,qty} of chosen){const existing=state.cart.find(x=>x.variant_id===v.id);if(existing&&existing.quantity+qty>v.stock){message('sizeModalMsg',`Stock insuffisant pour la pointure ${v.size}. Il reste ${v.stock} paire(s) disponible(s).`,'notice error');return}}
+ for(const {v,qty} of chosen){const existing=state.cart.find(x=>x.variant_id===v.id);if(existing)existing.quantity+=qty;else state.cart.push({variant_id:v.id,product_id:p.id,name:p.name,price:p.price,size:v.size,quantity:qty,stock:v.stock})}
+ saveCart();hide('sizeModal');renderCart();message('cartMsg',p.name+' ajouté au panier ('+chosen.map(({v,qty})=>'pointure '+v.size+' × '+qty).join(', ')+').','notice success');
+};
+window.addEventListener('storage',e=>{if(e.key===CART_STORAGE_KEY){state.cart=readSavedCart();updateCartBadge();renderCart()}});
+function renderCart(){
+ $('cartItems').innerHTML=state.cart.length?state.cart.map((x,i)=>`<div class="cartrow"><div><b>${escapeHtml(x.name)}</b><div class="muted">Pointure ${escapeHtml(x.size)} · ${x.quantity} × ${money(x.price)}</div></div><div><b>${money(x.price*x.quantity)}</b><br><button class="btn danger" onclick="window.removeCart(${i})">Retirer</button></div></div>`).join(''):'<div class="empty">Ton panier est vide.</div>';
+ $('cartTotal').textContent=money(state.cart.reduce((s,x)=>s+x.price*x.quantity,0));$('checkoutBtn').disabled=!state.cart.length||!configured;
+}
+window.removeCart=i=>{state.cart.splice(i,1);$('cartCount').textContent=state.cart.reduce((s,x)=>s+x.quantity,0);renderCart()};
+$('clearCart').onclick=()=>{state.cart=[];saveCart();renderCart()};
+$('checkoutBtn').onclick=()=>{if(!configured)return message('cartMsg','La base de données n’est pas encore configurée.');if(!state.cart.length)return;show('orderModal')};
+$('orderForm').onsubmit=async e=>{
+ e.preventDefault();if(!state.cart.length)return message('orderFormMsg','Ton panier est vide.','notice error');
+ const btn=$('submitOrder');btn.disabled=true;btn.textContent='Enregistrement…';
+ const payload={customer_name:$('cName').value.trim(),customer_phone:$('cPhone').value.trim(),region:$('cRegion').value,city:$('cCity').value.trim(),delivery_address:$('cAddress').value.trim(),payment_method:$('cPayment').value,customer_note:$('cNote').value.trim(),items:state.cart.map(x=>({variant_id:x.variant_id,quantity:x.quantity}))};
+ let orderNumber='';let saved=false;let saveError='';
+ try{
+  if(!db)throw new Error('Supabase n’est pas configuré.');
+  const {data,error}=await db.rpc('place_order',{order_data:payload});
+  if(error)throw error;
+  orderNumber=data?.order_number||'';saved=true;
+  if(orderNumber){try{await fetch('/.netlify/functions/notify-order',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({order_number:orderNumber})});}catch(err){console.warn('Notification e-mail non envoyée',err)}}
+ }catch(err){saveError=err?.message||'Erreur inconnue';}
+ if(saved){
+  state.cart=[];saveCart();hide('orderModal');renderCart();$('orderForm').reset();
+  $('successOrderNumber').textContent='Référence : '+(orderNumber||'non fournie');
+  $('successOrderStatus').textContent='Statut : En attente de confirmation';
+  show('orderSuccessModal');
+  if(state.isAdmin)loadOrders();
+ }else{
+  message('orderFormMsg','La commande n’a pas pu être enregistrée. Vérifie ta connexion puis réessaie. Détail : '+saveError,'notice error');
+ }
+ btn.disabled=false;btn.textContent='Commander';
+};
+const orderStatusLabels={pending:'En attente',confirmed:'Confirmée',paid:'Payée',shipped:'Expédiée',delivered:'Livrée',cancelled:'Annulée'};
+$('trackForm').onsubmit=async e=>{e.preventDefault();if(!db)return message('trackMsg','Le suivi est momentanément indisponible.','notice error');const btn=$('trackSubmit');btn.disabled=true;btn.textContent='Recherche…';$('trackResult').classList.add('hidden');$('trackMsg').className='';$('trackMsg').textContent='';try{const {data,error}=await db.rpc('track_doxantu_order',{p_order_number:$('trackOrderNumber').value.trim(),p_customer_phone:$('trackPhone').value.trim()});if(error)throw error;if(!data||data.found!==true){message('trackMsg','Aucune commande ne correspond à cette référence et à ce téléphone. Vérifie les informations puis réessaie.','notice error');return}const status=data.status||'pending';const stages=['pending','confirmed','paid','shipped','delivered'];const current=stages.indexOf(status);const stageHtml=status==='cancelled'?'<span class="track-chip current">Commande annulée</span>':stages.map((stage,i)=>`<span class="track-chip ${stage===status?'current':(current>=i?'done':'')}">${orderStatusLabels[stage]}</span>`).join('');$('trackResult').innerHTML=`<div class="panel"><div class="section-head" style="margin-top:0"><div><span class="muted">Commande</span><h3>${escapeHtml(data.order_number||'')}</h3></div><span class="pill">${escapeHtml(orderStatusLabels[status]||status)}</span></div><p><strong>Montant :</strong> ${money(data.total_amount)}</p><p><strong>Passée le :</strong> ${data.created_at?new Date(data.created_at).toLocaleString('fr-FR'):'—'}</p><div class="track-status">${stageHtml}</div><h4>Articles</h4><div>${(data.items||[]).map(i=>`<div class="cartrow"><div>${escapeHtml(i.product_name)} · pointure ${escapeHtml(i.size)}</div><strong>× ${Number(i.quantity)||0}</strong></div>`).join('')||'<span class="muted">Détails indisponibles.</span>'}</div><p class="muted" style="font-size:12px;margin-bottom:0">Pour une question sur ta commande, contacte directement l’équipe Doxantu.</p></div>`;$('trackResult').classList.remove('hidden');}catch(err){message('trackMsg','Impossible de consulter le suivi. La fonction SQL de suivi doit être installée dans Supabase. '+(err.message||''),'notice error')}finally{btn.disabled=false;btn.textContent='Consulter ma commande'}};
+$('successCloseBtn').onclick=()=>hide('orderSuccessModal');$('successTrackBtn').onclick=()=>{const ref=$('successOrderNumber').textContent.replace(/^Référence\s*:\s*/,'');hide('orderSuccessModal');setView('shopView');$('trackOrderNumber').value=ref;$('trackPanel').scrollIntoView({behavior:'smooth',block:'start'});$('trackPhone').focus({preventScroll:true})};
+$('navTrack').addEventListener('click',()=>{$('trackResult').classList.add('hidden')});
+
+$('loginBtn').onclick=async()=>{
+ if(!db)return message('loginMsg','Configure d’abord Supabase.','notice error');$('loginBtn').disabled=true;
+ try{const {data,error}=await db.auth.signInWithPassword({email:$('loginEmail').value.trim(),password:$('loginPassword').value});if(error)throw error;state.user=data.user;await checkAdmin();}
+ catch(err){message('loginMsg','Connexion impossible : '+err.message,'notice error');}
+ finally{$('loginBtn').disabled=false;}
+};
+async function checkAdmin(){
+ if(!state.user||!db)return;
+ const {data,error}=await db.rpc('is_doxantu_admin');
+ if(error||data!==true){await db.auth.signOut();state.user=null;state.isAdmin=false;message('loginMsg','Ce compte n’a pas les droits administrateur. Vérifie la configuration SQL.','notice error');return;}
+ state.isAdmin=true;syncAdminNavigation();hide('adminLogin');show('adminApp');show('logoutBtn');await refreshAdmin();
+}
+$('logoutBtn').onclick=async()=>{if(db)await db.auth.signOut();state.user=null;state.isAdmin=false;syncAdminNavigation();show('adminLogin');hide('adminApp');hide('logoutBtn');if(window.location.hash==='#admin')history.replaceState(null,'',window.location.pathname+window.location.search);syncAdminNavigation();setView('shopView')};
+if(db)db.auth.onAuthStateChange((event,session)=>{if(event==='SIGNED_OUT'||!session){state.user=null;state.isAdmin=false;syncAdminNavigation();hide('adminApp');show('adminLogin');hide('logoutBtn')}else if(session.user){state.user=session.user;setTimeout(()=>checkAdmin(),0)}});
+async function refreshAdmin(){if(!state.isAdmin)return;await loadAdminProducts();await loadOrders();const {count:pc}=await db.from('products').select('*',{count:'exact',head:true}).eq('active',true);const {count:oc}=await db.from('orders').select('*',{count:'exact',head:true});const {data:rev}=await db.from('orders').select('total_amount').eq('status','delivered');$('statProducts').textContent=pc??0;$('statOrders').textContent=oc??0;$('statRevenue').textContent=money((rev||[]).reduce((s,x)=>s+Number(x.total_amount),0));}
+async function loadPublicProducts(){
+ if(!db)return configNotice();
+ const {data,error}=await db.from('products').select('*,product_variants(id,size,stock)').eq('active',true).order('created_at',{ascending:false});
+ if(error){message('shopNotice','Impossible de charger les produits : '+error.message,'notice error');return;}
+ state.products=data||[];renderCatalog();
+}
+async function loadAdminProducts(){
+ if(!state.isAdmin)return;
+ const {data,error}=await db.from('products').select('*,product_variants(id,size,stock)').order('created_at',{ascending:false});
+ if(error){message('productAdminMsg',error.message,'notice error');return}
+ state.products=data||[];renderCatalog();
+ $('adminProducts').innerHTML=state.products.map(p=>`<tr><td><b>${escapeHtml(p.name)}</b><br><small>${escapeHtml(p.description||'')}</small></td><td>${escapeHtml(p.category)}</td><td>${money(p.price)}</td><td>${productStock(p)}</td><td>${p.active?'Actif':'Masqué'}</td><td><button class="btn" onclick="window.editProduct('${p.id}')">Modifier</button> <button class="btn danger" onclick="window.toggleProduct('${p.id}',${!p.active})">${p.active?'Masquer':'Publier'}</button> <button class="btn danger" onclick="window.deleteProduct('${p.id}')">Supprimer</button></td></tr>`).join('')||'<tr><td colspan="6">Aucun produit pour le moment.</td></tr>';
+ $('statProducts').textContent=state.products.filter(p=>p.active).length;
+}
+window.editProduct=id=>{
+ const p=state.products.find(x=>x.id===id);if(!p)return;
+ $('productModalTitle').textContent='Modifier un produit';$('editProductId').value=p.id;$('pName').value=p.name;$('pCategory').value=p.category;$('pPrice').value=p.price;resetProductImagePicker(p.image_url||'');$('pDescription').value=p.description||'';renderVariantEditor(p.product_variants||[]);$('pActive').value=String(p.active);show('productModal');
+};
+window.toggleProduct=async(id,active)=>{const {error}=await db.from('products').update({active}).eq('id',id);if(error)message('productAdminMsg',error.message,'notice error');await loadAdminProducts()};
+window.deleteProduct=async(id)=>{
+ if(!state.isAdmin)return;
+ const p=state.products.find(x=>x.id===id);if(!p)return;
+ if(!confirm('Supprimer définitivement « '+p.name+' » ? Cette action est irréversible.'))return;
+ const {error}=await db.from('products').delete().eq('id',id);
+ if(error){message('productAdminMsg','Suppression impossible : '+error.message,'notice error');return}
+ message('productAdminMsg','Produit supprimé.','notice success');await loadAdminProducts();
+};
+$('addProductBtn').onclick=()=>{$('productForm').reset();$('editProductId').value='';resetProductImagePicker('');renderVariantEditor([]);$('productModalTitle').textContent='Ajouter un produit';$('pActive').value='true';show('productModal')};
+function addVariantRow(size='',stock=1,id=''){
+ const row=document.createElement('div');row.className='variant-row';row.dataset.variantId=id;
+ row.innerHTML=`<div class="field"><label>Pointure</label><input class="variant-size" required maxlength="12" placeholder="Ex. 39" value="${escapeHtml(size)}"></div><div class="field"><label>Stock (paires)</label><input class="variant-stock" required type="number" min="0" step="1" value="${Number(stock)||0}"></div><button type="button" class="btn remove-variant">Supprimer</button>`;
+ row.querySelector('.remove-variant').onclick=()=>{row.remove();};$('variantEditor').appendChild(row);return row;
+}
+function renderVariantEditor(variants=[]){$('variantEditor').innerHTML='';(variants||[]).forEach(v=>addVariantRow(v.size,v.stock,v.id||''));if(!variants.length)addVariantRow('',1,'');}
+$('addVariantBtn').onclick=()=>{const row=addVariantRow('',1,'');row.querySelector('.variant-size').focus()};
+document.querySelectorAll('.sizePreset').forEach(b=>b.addEventListener('click',()=>{const sizes=b.dataset.sizes.split(',');[...$('variantEditor').querySelectorAll('.variant-row')].forEach(row=>{if(!row.querySelector('.variant-size').value.trim())row.remove()});const existing=new Set([...$('variantEditor').querySelectorAll('.variant-size')].map(x=>x.value.trim()));sizes.forEach(size=>{if(!existing.has(size))addVariantRow(size,1,'')});}));
+let selectedProductImage = null;
+function resetProductImagePicker(existingUrl=''){
+ selectedProductImage=null;
+ $('pImageFile').value='';
+ const preview=$('pImagePreview');
+ if(existingUrl){preview.src=existingUrl;preview.classList.add('visible');}
+ else{preview.removeAttribute('src');preview.classList.remove('visible');}
+}
+$('pImageFile').addEventListener('change',()=>{
+ const file=$('pImageFile').files?.[0]||null;
+ if(!file){selectedProductImage=null;return;}
+ if(!file.type.startsWith('image/')){message('productFormMsg','Choisis un fichier image valide.','notice error');$('pImageFile').value='';selectedProductImage=null;return;}
+ if(file.size>5*1024*1024){message('productFormMsg','La photo doit faire 5 Mo maximum.','notice error');$('pImageFile').value='';selectedProductImage=null;return;}
+ selectedProductImage=file;
+ const preview=$('pImagePreview');
+ preview.src=URL.createObjectURL(file);preview.classList.add('visible');
+ $('productFormMsg').textContent='';$('productFormMsg').className='';
+});
+$('removeImageSelection').onclick=()=>{
+ selectedProductImage=null;$('pImageFile').value='';
+ const id=$('editProductId').value;const current=state.products.find(x=>x.id===id);
+ resetProductImagePicker(current?.image_url||'');
+};
+async function uploadProductImage(file){
+ if(!db||!state.isAdmin)throw new Error('Connexion administrateur requise pour envoyer une photo.');
+ const safeName=(file.name||'photo').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-zA-Z0-9._-]+/g,'-').slice(-90)||'photo';
+ const path=`products/${crypto.randomUUID()}-${safeName}`;
+ const {error}=await db.storage.from('product-images').upload(path,file,{cacheControl:'3600',upsert:false,contentType:file.type});
+ if(error)throw error;
+ const {data}=db.storage.from('product-images').getPublicUrl(path);
+ if(!data?.publicUrl)throw new Error('Impossible de récupérer l’URL publique de la photo.');
+ return data.publicUrl;
+}
+
+$('productForm').onsubmit=async e=>{
+ e.preventDefault();if(!state.isAdmin)return;const msg=$('productFormMsg');msg.className='';msg.textContent='';
+ const variants=[];const seenSizes=new Set();
+ for(const row of $('variantEditor').querySelectorAll('.variant-row')){const size=row.querySelector('.variant-size').value.trim();const stockText=row.querySelector('.variant-stock').value;const stock=Number(stockText);if(!size||!Number.isInteger(stock)||stock<0){message('productFormMsg','Vérifie chaque pointure et son stock (nombre entier positif ou zéro).','notice error');return}const normalized=size.toLocaleLowerCase('fr');if(seenSizes.has(normalized)){message('productFormMsg','Chaque pointure doit être unique. Supprime le doublon.','notice error');return}seenSizes.add(normalized);variants.push({id:row.dataset.variantId||null,size,stock});}
+ if(!variants.length){message('productFormMsg','Ajoute au moins une pointure avec le bouton « Ajouter une pointure ».','notice error');return}
+ const id=$('editProductId').value;const existingProduct=state.products.find(x=>x.id===id);const p={name:$('pName').value.trim(),category:$('pCategory').value,price:Number($('pPrice').value),image_url:existingProduct?.image_url||null,description:$('pDescription').value.trim(),active:$('pActive').value==='true'};
+ try{
+  const submitButton=$('productForm').querySelector('button[type="submit"]');submitButton.disabled=true;submitButton.textContent='Enregistrement…';
+  if(selectedProductImage){message('productFormMsg','Envoi de la photo en cours…','notice');p.image_url=await uploadProductImage(selectedProductImage);}
+  let productId=id;
+  if(id){const {error}=await db.from('products').update(p).eq('id',id);if(error)throw error;}
+  else{const {data,error}=await db.from('products').insert(p).select('id').single();if(error)throw error;productId=data.id;}
+  const existingVariants=existingProduct?.product_variants||[];const submittedIds=new Set(variants.filter(v=>v.id).map(v=>v.id));
+  for(const v of variants){if(v.id){const {error}=await db.from('product_variants').update({size:v.size,stock:v.stock}).eq('id',v.id).eq('product_id',productId);if(error)throw error;}else{const {error}=await db.from('product_variants').insert({product_id:productId,size:v.size,stock:v.stock});if(error)throw error;}}
+  const removed=existingVariants.filter(v=>!submittedIds.has(v.id));
+  for(const v of removed){const {error}=await db.from('product_variants').delete().eq('id',v.id).eq('product_id',productId);if(error)throw new Error('La pointure '+v.size+' ne peut pas être supprimée, car elle est peut-être liée à une commande existante. '+error.message);}
+  hide('productModal');resetProductImagePicker('');await loadAdminProducts();await refreshAdmin();
+ }catch(err){message('productFormMsg','Enregistrement incomplet : '+err.message,'notice error');}
+ finally{const submitButton=$('productForm').querySelector('button[type="submit"]');submitButton.disabled=false;submitButton.textContent='Enregistrer le produit';}
+};
+let knownOrderIds=new Set();let firstOrdersLoad=true;let currentOrders=[];
+function renderAdminOrders(){
+ const q=($('orderSearch')?.value||'').trim().toLowerCase();const status=$('orderStatusFilter')?.value||'';
+ const filtered=currentOrders.filter(o=>{const text=[o.order_number,o.customer_name,o.customer_phone,o.region,o.city,o.delivery_address,...(o.order_items||[]).flatMap(i=>[i.product_name,i.size])].join(' ').toLowerCase();return (!q||text.includes(q))&&(!status||o.status===status)});
+ $('adminOrders').innerHTML=filtered.map(o=>{
+  const waPhone=String(o.customer_phone||'').replace(/[^0-9]/g,'').replace(/^0/,'221');
+  const waMessage=encodeURIComponent(`Bonjour ${o.customer_name||''}, c’est Aminata de DOXANTU. Je vous contacte au sujet de votre commande ${o.order_number}.`);
+  const items=(o.order_items||[]).map(i=>`<div class="order-item-line"><b>${escapeHtml(i.product_name)}</b><span class="order-detail">Pointure ${escapeHtml(i.size)} · ${Number(i.quantity)||0} paire(s)</span></div>`).join('');
+  const date=o.created_at?new Date(o.created_at).toLocaleString('fr-FR',{dateStyle:'medium',timeStyle:'short'}):'—';
+  return `<tr><td><span class="order-ref">${escapeHtml(o.order_number)}</span><span class="order-date">${escapeHtml(date)}</span></td><td><span class="order-customer">${escapeHtml(o.customer_name)}</span><span class="order-detail">${escapeHtml(o.customer_phone)}</span><span class="order-detail">${escapeHtml(o.region||'')} · ${escapeHtml(o.city||'')}</span>${o.delivery_address?`<span class="order-detail">📍 ${escapeHtml(o.delivery_address)}</span>`:''}</td><td><div class="order-items-list">${items||'<span class="muted">Détails indisponibles</span>'}</div></td><td><b>${money(o.total_amount)}</b></td><td>${escapeHtml(o.payment_method||'—')}</td><td class="order-status-cell"><select class="status-select status-${o.status}" aria-label="Statut de commande" onchange="window.updateOrder('${o.id}',this.value)">${['pending','confirmed','paid','shipped','delivered','cancelled'].map(st=>`<option value="${st}" ${o.status===st?'selected':''}>${orderStatusLabels[st]}</option>`).join('')}</select></td><td><div class="order-row-actions"><a class="order-contact-btn" href="https://wa.me/${waPhone}?text=${waMessage}" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3A13 13 0 0 0 4.8 22.6L3 29l6.6-1.7A13 13 0 1 0 16 3Zm0 23.5a10.6 10.6 0 0 1-5.4-1.5l-.4-.2-4 1 1.1-3.9-.3-.4a10.5 10.5 0 1 1 9 5Z"/></svg>Contacter</a>${o.status==='delivered'?'<span class="muted">Livrée · protégée</span>':`<button type="button" class="btn danger delete-order-btn" onclick="window.deleteOrder('${o.id}','${escapeHtml(o.order_number)}')">Supprimer</button>`}</div></td></tr>`;
+ }).join('')||`<tr><td colspan="7" class="empty">${currentOrders.length?'Aucune commande ne correspond aux filtres.':'Aucune commande pour le moment.'}</td></tr>`;
+}
+async function loadOrders(){
+ if(!state.isAdmin)return;
+ const {data,error}=await db.from('orders').select('id,order_number,customer_name,customer_phone,region,city,delivery_address,payment_method,status,total_amount,created_at,order_items(product_name,size,quantity,unit_price)').order('created_at',{ascending:false}).limit(100);
+ if(error){message('orderAdminMsg',error.message,'notice error');return}
+ const rows=data||[];const newest=rows.filter(o=>!knownOrderIds.has(o.id));if(!firstOrdersLoad&&newest.length){message('orderAdminMsg',`🔔 ${newest.length} nouvelle(s) commande(s) reçue(s).`,'notice success');if('Notification' in window&&Notification.permission==='granted')new Notification('Nouvelle commande Doxantu',{body:`${newest.length} nouvelle(s) commande(s) reçue(s).`});}
+ rows.forEach(o=>knownOrderIds.add(o.id));firstOrdersLoad=false;currentOrders=rows;
+ const pending=rows.filter(o=>o.status==='pending').length;$('navNewOrderCount').textContent=String(pending);$('navAdminOrders').setAttribute('aria-label',`${pending} commande(s) en attente`);$('ordersTotalCount').textContent=rows.length;$('ordersPendingCount').textContent=pending;$('ordersShippedCount').textContent=rows.filter(o=>o.status==='shipped').length;$('ordersDeliveredCount').textContent=rows.filter(o=>o.status==='delivered').length;
+ $('statOrders').textContent=rows.length;renderAdminOrders();
+}
+$('orderSearch').addEventListener('input',renderAdminOrders);$('orderStatusFilter').addEventListener('change',renderAdminOrders);
+window.updateOrder=async(id,status)=>{const {error}=await db.from('orders').update({status}).eq('id',id);if(error)message('orderAdminMsg','Mise à jour échouée : '+error.message,'notice error');else message('orderAdminMsg','Statut mis à jour.','notice success');await loadOrders();await refreshAdmin()};
+let pendingOrderDeletion=null;
+function closeDeleteOrderModal(){
+ if($('confirmDeleteOrder').disabled)return;
+ hide('deleteOrderModal');pendingOrderDeletion=null;$('deleteOrderModalMsg').classList.add('hidden');$('cancelDeleteOrder').focus();
+}
+window.deleteOrder=(id,orderNumber)=>{
+ if(!state.isAdmin){message('orderAdminMsg','Connecte-toi avec un compte administrateur pour supprimer une commande.','notice error');return;}
+ pendingOrderDeletion={id,orderNumber};
+ $('deleteOrderNumber').textContent=orderNumber;
+ $('deleteOrderModalMsg').classList.add('hidden');
+ $('confirmDeleteOrder').disabled=false;$('cancelDeleteOrder').disabled=false;$('confirmDeleteOrder').innerHTML='<svg style="width:16px;height:16px;vertical-align:-3px;margin-right:5px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2m3 0-1 14H6L5 6m5 5v5m4-5v5"/></svg>Supprimer définitivement';
+ show('deleteOrderModal');$('cancelDeleteOrder').focus();
+};
+$('cancelDeleteOrder').onclick=closeDeleteOrderModal;
+$('deleteOrderModal').addEventListener('click',e=>{if(e.target===$('deleteOrderModal'))closeDeleteOrderModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('deleteOrderModal').classList.contains('hidden'))closeDeleteOrderModal()});
+$('confirmDeleteOrder').onclick=async()=>{
+ if(!state.isAdmin){message('deleteOrderModalMsg','Session administrateur absente. Reconnecte-toi puis réessaie.','notice error');show('deleteOrderModalMsg');return;}
+ if(!pendingOrderDeletion)return;
+ const {id,orderNumber}=pendingOrderDeletion;
+ $('confirmDeleteOrder').disabled=true;$('cancelDeleteOrder').disabled=true;$('confirmDeleteOrder').textContent='Suppression en cours…';
+ const {data,error}=await db.rpc('admin_delete_order',{order_id:id});
+ if(error){$('confirmDeleteOrder').disabled=false;$('cancelDeleteOrder').disabled=false;$('confirmDeleteOrder').textContent='Réessayer';message('deleteOrderModalMsg','Suppression impossible : '+error.message+' Vérifie que la migration SQL de suppression est installée.','notice error');show('deleteOrderModalMsg');return;}
+ if(data&&data.ok===false){$('confirmDeleteOrder').disabled=false;$('cancelDeleteOrder').disabled=false;$('confirmDeleteOrder').textContent='Réessayer';message('deleteOrderModalMsg',data.message||'Suppression refusée.','notice error');show('deleteOrderModalMsg');return;}
+ hide('deleteOrderModal');pendingOrderDeletion=null;$('confirmDeleteOrder').disabled=false;$('cancelDeleteOrder').disabled=false;
+ knownOrderIds.delete(id);message('orderAdminMsg',`Commande ${orderNumber} supprimée.`,'notice success');await loadOrders();await refreshAdmin();
+};
+$('refreshOrders').onclick=loadOrders;
+updateCartBadge();syncAdminNavigation();if(db){db.auth.getSession().then(({data})=>{if(data.session){state.user=data.session.user;checkAdmin();}});loadPublicProducts();}
+else configNotice();
+$('enableNotifications').onclick=async()=>{if(!('Notification' in window)){ $('notificationStatus').textContent='Ce navigateur ne prend pas en charge les notifications.';return;}try{const permission=await Notification.requestPermission();$('notificationStatus').textContent=permission==='granted'?'Notifications autorisées sur cet appareil.':permission==='denied'?'Notifications bloquées dans les réglages du navigateur.':'Autorisation non accordée.';}catch{$('notificationStatus').textContent='Impossible de demander l’autorisation.'}};
+setInterval(()=>{if(state.isAdmin)loadOrders();},25000);
+// La permission de notification est demandée par le navigateur uniquement après une action explicite de l'administrateur.
+</script>
+</body></html>
